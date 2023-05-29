@@ -8,7 +8,7 @@ import { Bunus } from '../interfaces/bunus';
   styleUrls: ['./widget.component.scss'],
 })
 export class WidgetComponent implements OnInit {
-  isActive: boolean = true;
+  isActive: boolean = false;
   bonusData: Bunus[] = [];
   constructor(private bonusDataService: BonusDataService) {}
 
@@ -20,7 +20,9 @@ export class WidgetComponent implements OnInit {
     this.bonusDataService.getBonus().subscribe(
       (data: Bunus[]) => {
         this.bonusData = data;
-        console.log(this.bonusData);
+        if (this.bonusData[0].summe > 0) {
+          this.isActive = true;
+        }
       },
       (error) => {
         console.error('Error fetching bonus data:', error);
