@@ -1,7 +1,7 @@
 <div class="widget">
-    <div class="widget-wrapper">
-        <div class="widget-data">
-            <span>{{bonusSumme}}</span>
+    <div class="widget-wrapper" [ngStyle]="{'height': showTotalInfos ? 'auto' : '80px'}">
+        <div *ngIf="!showTotalInfos" class="widget-data">
+            <span>{{bonusSumme.toLocaleString().replace('.', ' ')}}</span>
         </div>
         <div class="widget-info" [ngClass]="{'active': isActive}" (click)="toggleShowInfos()">
             <span *ngIf="showCloseIcon">X</span>
@@ -11,4 +11,5 @@
             </div>
         </div>
     </div>
+    <app-widget-content></app-widget-content>
 </div>

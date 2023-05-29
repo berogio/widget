@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { WidgetComponent } from './widget/widget-container/widget.component';
+import { WidgetComponent } from './widget/widget-container/widget-container.component';
+import { WidgetContentComponent } from './widget/widget-content/widget-content.component';
+import { SeparatorDirective } from './directives/separator.directive';
 
 @NgModule({
-  declarations: [AppComponent, WidgetComponent],
+  declarations: [AppComponent, WidgetComponent, WidgetContentComponent, SeparatorDirective],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

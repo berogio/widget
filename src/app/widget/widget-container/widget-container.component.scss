@@ -7,8 +7,6 @@
 
 .widget-wrapper {
   @include flex-column-space-between;
-  width: 48px;
-  height: 80px;
   background-color: #2e3139;
   border-radius: 100px;
   font-family: "Montserrat-Medium", sans-serif;

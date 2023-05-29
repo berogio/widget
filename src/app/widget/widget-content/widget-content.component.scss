@@ -1,0 +1,4 @@
+@import "/src/app/mixins.scss";
+.info-box {
+  @include widget-style(#ffffff26, 100px, 48px);
+}
