@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BonusDataService } from '../services/bonus-data.service';
-import { Bunus } from '../interfaces/bunus';
+import { BonusDataService } from '../../services/bonus-data.service';
+import { Bunus } from '../../interfaces/bunus';
 
 @Component({
   selector: 'app-widget',
@@ -33,7 +33,9 @@ export class WidgetComponent implements OnInit {
       }
     );
   }
-  toggleSpan() {
-    this.showCloseIcon = !this.showCloseIcon;
+  toggleShowInfos() {
+    if (this.bonusSumme > 0) {
+      this.showCloseIcon = !this.showCloseIcon;
+    }
   }
 }

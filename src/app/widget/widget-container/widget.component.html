@@ -3,7 +3,7 @@
         <div class="widget-data">
             <span>{{bonusSumme}}</span>
         </div>
-        <div class="widget-info" [ngClass]="{'active': isActive}" (click)="toggleSpan()">
+        <div class="widget-info" [ngClass]="{'active': isActive}" (click)="toggleShowInfos()">
             <span *ngIf="showCloseIcon">X</span>
             <div *ngIf="!showCloseIcon">
                 <span>BONUS</span>
