@@ -3,8 +3,12 @@
         <div class="widget-data">
             <span>0</span>
         </div>
-        <div class="widget-info" [ngClass]="{'active': isActive}">
-            <span></span>
+        <div class="widget-info" [ngClass]="{'active': isActive}" (click)="toggleSpan()">
+            <span *ngIf="showCloseIcon">X</span>
+            <div *ngIf="!showCloseIcon">
+                <span>BONUS</span>
+                <span>ROUNDS</span>
+            </div>
         </div>
     </div>
 </div>

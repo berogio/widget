@@ -10,6 +10,7 @@ import { Bunus } from '../interfaces/bunus';
 export class WidgetComponent implements OnInit {
   isActive: boolean = false;
   bonusData: Bunus[] = [];
+  showCloseIcon: boolean = false;
   constructor(private bonusDataService: BonusDataService) {}
 
   ngOnInit(): void {
@@ -28,5 +29,8 @@ export class WidgetComponent implements OnInit {
         console.error('Error fetching bonus data:', error);
       }
     );
+  }
+  toggleSpan() {
+    this.showCloseIcon = !this.showCloseIcon;
   }
 }
