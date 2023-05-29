@@ -1,10 +1,11 @@
-import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, OnInit } from '@angular/core';
+import { gsap } from 'gsap';
 
 @Directive({
   selector: '[appDragDrop]',
 })
 export class DragDropDirective implements OnInit {
-  constructor(private el: ElementRef, private ren: Renderer2) {}
+  constructor(private el: ElementRef) {}
 
   ngOnInit(): void {}
 }
