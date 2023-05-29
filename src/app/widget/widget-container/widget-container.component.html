@@ -1,4 +1,5 @@
 <div class="widget">
+    <app-widget-content *ngIf="showTotalInfos"></app-widget-content>
     <div class="widget-wrapper" [ngStyle]="{'height': showTotalInfos ? 'auto' : '80px'}">
         <div *ngIf="!showTotalInfos" class="widget-data">
             <span>{{bonusSumme.toLocaleString().replace('.', ' ')}}</span>
@@ -11,5 +12,4 @@
             </div>
         </div>
     </div>
-    <app-widget-content></app-widget-content>
 </div>

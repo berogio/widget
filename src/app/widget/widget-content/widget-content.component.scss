@@ -1,4 +1,47 @@
 @import "/src/app/mixins.scss";
+$info-box-color: #00a83c;
 .info-box {
   @include widget-style(#ffffff26, 100px, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.total {
+  position: relative;
+  bottom: 6px;
+  background-color: $info-box-color;
+  border-radius: 133px;
+  width: 26px;
+  height: 16px;
+  font-size: 8px;
+  font-family: "Montserrat-Bold", sans-serif;
+  @include flex-center;
+}
+
+.info-box div span {
+  font-family: "Montserrat-Bold", sans-serif;
+  display: block;
+}
+
+.info-box:nth-child(2) div span:nth-child(1) {
+  color: $info-box-color;
+  font-size: 7px;
+}
+
+.info-box:nth-child(2) div span:nth-child(2) {
+  font-size: 8.4px;
+}
+
+.info-box:nth-child(3) div span:nth-child(1) {
+  color: $info-box-color;
+  font-size: 11px;
+  line-height: 10px;
+}
+
+.info-box:nth-child(3) div span:nth-child(2) {
+  color: #f70628;
+  font-size: 8.4px;
 }
