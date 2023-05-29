@@ -1,15 +1,46 @@
+@import "/src/app/mixins.scss";
+:host {
+    position: fixed;
+    bottom: 150px;
+    right: 15px;
+}
+
 .widget-wrapper {
+    @include flex-column-space-between;
     width: 48px;
     height: 80px;
-    background-color: #eaeaea;
+    background-color: #2e3139;
     border-radius: 100px;
+    font-family: "Montserrat-Medium", sans-serif;
+}
+
+.widget-data {
+    text-align: center;
+    margin: auto;
+    span {
+        color: #00a83c;
+        font-family: "NotoSansGeorgian-SemiBold", sans-serif;
+        font-size: 12px;
+    }
+}
+
+.widget-info {
+    @include widget-style(#ffffff26, 100px, 48px);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .widget-info {
-        background-color: aquamarine;
-        border-radius: 100px;
-        width: 48px;
-        height: 48px;
+    align-items: center;
+    text-align: center;
+    font-size: 8.8px;
+    color: rgba(255, 255, 255, 0.8);
+    span::before {
+        content: "BONUS ";
+        font-weight: bold;
+        font-size: 8.8px;
+        line-height: 11px;
+    }
+    span::after {
+        content: " ROUNDS";
+        font-weight: normal;
+        font-size: 7.26px;
+        line-height: 9px;
     }
 }

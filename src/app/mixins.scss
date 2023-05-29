@@ -1,0 +1,12 @@
+@mixin flex-column-space-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin widget-style($color: #ffffff26, $radius: 100px, $size: 48px) {
+    background-color: $color;
+    border-radius: $radius;
+    width: $size;
+    height: $size;
+}
