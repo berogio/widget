@@ -10,7 +10,9 @@ import { Bunus } from '../interfaces/bunus';
 export class WidgetComponent implements OnInit {
   isActive: boolean = false;
   bonusData: Bunus[] = [];
+  bonusSumme: number = 0;
   showCloseIcon: boolean = false;
+
   constructor(private bonusDataService: BonusDataService) {}
 
   ngOnInit(): void {
@@ -21,7 +23,8 @@ export class WidgetComponent implements OnInit {
     this.bonusDataService.getBonus().subscribe(
       (data: Bunus[]) => {
         this.bonusData = data;
-        if (this.bonusData[0].summe > 0) {
+        this.bonusSumme = data[0].summe;
+        if (this.bonusSumme > 0) {
           this.isActive = true;
         }
       },
