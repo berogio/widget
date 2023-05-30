@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Bunus } from '../interfaces/bunus';
+import { Bunus } from '../interfaces/bunus.interface';
 
 @Injectable({
   providedIn: 'root',

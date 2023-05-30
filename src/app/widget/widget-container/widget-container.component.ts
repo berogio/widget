@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BonusDataService } from '../../services/bonus-data.service';
-import { Bunus } from '../../interfaces/bunus';
+import { Bunus } from '../../interfaces/bunus.interface';
 
 @Component({
   selector: 'app-widget',

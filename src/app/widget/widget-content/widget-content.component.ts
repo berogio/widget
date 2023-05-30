@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Bunus } from 'src/app/interfaces/bunus';
+import { Bunus } from 'src/app/interfaces/bunus.interface';
 import { BonusDataService } from 'src/app/services/bonus-data.service';
 
 @Component({
