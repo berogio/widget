@@ -1,4 +1,5 @@
 @import "/src/app/mixins.scss";
+
 :host {
   position: fixed;
   bottom: 150px;
@@ -15,6 +16,7 @@
 .widget-data {
   text-align: center;
   margin: auto;
+
   span {
     color: #00a83c;
     font-family: "NotoSansGeorgian-SemiBold", sans-serif;
@@ -28,17 +30,21 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+  // 8.8px; ასეთ რიცხვებს ტყუილად წერ ბრაუზერები არ არენდერებენ სწორად მთელი რიცხვები დაწერე და px ის მაგიერ rem და em  იხამრე
   font-size: 8.8px;
   cursor: pointer;
+
   & span {
     font-size: 14px;
     /* ამის მაგივრად მატერიალის აიქონი */
   }
+
   div span:nth-child(1) {
     font-weight: bold;
     font-size: 8.8px;
     line-height: 11px;
   }
+
   div span:nth-child(2) {
     display: block;
     font-weight: normal;
@@ -47,7 +53,9 @@
   }
 }
 
-.widget-info.active {
-  background-color: #00a83c;
+.widget-info {
   /* როცა summe 0 ზე მეტია */
+  &.active {
+    background-color: #00a83c;
+  }
 }
