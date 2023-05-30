@@ -8,13 +8,13 @@ import { Bunus } from '../../interfaces/bunus.interface';
   styleUrls: ['./widget-container.component.scss'],
 })
 export class WidgetComponent implements OnInit {
-  isActive: boolean = false;
+  isActive = false;
   bonusData: Bunus[] = [];
-  bonusSumme: number = 0;
-  showCloseIcon: boolean = false;
-  showTotalInfos: boolean = false;
+  bonusSumme = 0;
+  showCloseIcon = false;
+  showTotalInfos = false;
 
-  constructor(private bonusDataService: BonusDataService) {}
+  constructor(private bonusDataService: BonusDataService) { }
 
   ngOnInit(): void {
     this.getBonusData();
@@ -22,15 +22,17 @@ export class WidgetComponent implements OnInit {
 
   getBonusData() {
     this.bonusDataService.getBonus().subscribe(
-      (data: Bunus[]) => {
-        this.bonusData = data;
-        this.bonusSumme = data[0].summe;
-        if (this.bonusSumme > 0) {
-          this.isActive = true;
+      {
+        next: (data: Bunus[]) => {
+          this.bonusData = data;
+          this.bonusSumme = data[0].summe;
+          if (this.bonusSumme > 0) {
+            this.isActive = true;
+          }
+        },
+        error: (error) => {
+          console.error('Error fetching bonus data:', error);
         }
-      },
-      (error) => {
-        console.error('Error fetching bonus data:', error);
       }
     );
   }
